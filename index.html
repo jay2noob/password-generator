@@ -15,15 +15,49 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div class="content">
-                    <h3>Password Generator</h3>
-                    <br>
+                <section class="result">
+                <div>
+                    <h1>Password Generator</h1>
+                </div>
+                <div>
                     <input type="text" class="password">
                 </div>
+                </section>
+            </div>  
+        </div>  
+        <div class="row">
+            <div class="col-md-8">
+                <section class="settings">
+                <div>
+                    <h3>Number of Characters:</h3>
+                    <input type="numbers" class="characters" min="8" max="128">
+                </div>
+                <div>
+                    <input type="checkbox" class="uppercase">
+                    <label>Add Uppercase</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="lowercase">
+                    <label>Add Lowercase</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="numbers">
+                    <label>Add Numbers</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="symbols">
+                    <label>Add Symbols</label>
+                </div>
+                </section>
             </div>
         </div>
+                <button class="generate">
+                    Generate
+                </button>
+                <button class="copy">
+                    Copy
+                </button>   
     </div>
-
 
     <script rel="text/javascript" src="script.js"></script>     
 
