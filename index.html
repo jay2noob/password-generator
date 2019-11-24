@@ -13,52 +13,52 @@
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <section class="result">
-                <div>
-                    <h1>Password Generator</h1>
-                </div>
-                <div>
-                    <input type="text" class="password">
-                </div>
-                </section>
-            </div>  
-        </div>  
+         <h1>Password Generator</h1>
+            <div class="result-container">    
+                   <span id="password"></span>
+                   <button class="btn" id="copy">Copy
+                       <i class="far fa-clipboard"></i>
+                   </button>
+            </div>
+              
         <div class="row">
             <div class="col-md-8">
                 <section class="settings">
                 <div>
                     <h3>Number of Characters:</h3>
-                    <input type="numbers" class="characters" min="8" max="128">
+                    <input type="numbers" id="characters" min="8" max="128" value="8">
                 </div>
                 <div>
-                    <input type="checkbox" class="uppercase">
+                    <input type="checkbox" id="uppercase" checked>
                     <label>Add Uppercase</label>
                 </div>
                 <div>
-                    <input type="checkbox" class="lowercase">
+                    <input type="checkbox" id="lowercase" checked>
                     <label>Add Lowercase</label>
                 </div>
                 <div>
-                    <input type="checkbox" class="numbers">
+                    <input type="checkbox" id="numbers" checked>
                     <label>Add Numbers</label>
                 </div>
                 <div>
-                    <input type="checkbox" class="symbols">
+                    <input type="checkbox" id="symbols" checked>
                     <label>Add Symbols</label>
                 </div>
                 </section>
             </div>
         </div>
-                <button class="generate">
+                <button id="generate">
                     Generate
-                </button>
-                <button class="copy">
-                    Copy
-                </button>   
+                </button>  
     </div>
-
+    <div>
+        <h2>Previous Passwords:</h2>
+            <br>
+        <div>
+            <p id="old-passwords"></p>
+        </div>
+    </div>
+    
     <script rel="text/javascript" src="script.js"></script>     
 
 </body>

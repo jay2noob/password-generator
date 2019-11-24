@@ -16,9 +16,17 @@ const randomFunc = {
     symbol: addRandomSymbols
 };
 
-document.querySelector("#copy").addEventListener("click", function() {
-    document.querySelector("#password").select()
-    document.execCommand("copy")
+copyEl.addEventListener("click", function() {
+    const textarea = document.createElement("textarea");
+    const password = passwordEl.innerText;
+
+    if (!password) {return; }
+
+    textarea.value = password;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
 })
 
 function addRandomNums() {
@@ -48,7 +56,7 @@ generateEl.addEventListener("click", function() {
     const isNumbered = numbersEl.checked;
     const isSymbol = symbolsEl.checked;
 
-passwordEl.innerHTML = generatePassword(isUpper, isLower, isNumbered, isSymbol, length);      
+passwordEl.innerText = generatePassword(isUpper, isLower, isNumbered, isSymbol, length);      
 });
 
 function generatePassword(upper, lower, number, symbol, length) {
@@ -68,8 +76,9 @@ for (let i = 0; i < length; i += typesCount) {
  }
       
 const finalPassword = generatedPassword.slice(0, length);
-
+document.getElementById("old-passwords").innerHTML += generatedPassword + "<br/>";
 return finalPassword;
+
 }  
 
 
